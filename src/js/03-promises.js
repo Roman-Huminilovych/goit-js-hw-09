@@ -23,6 +23,7 @@ function submitPromises(e) {
       });
     delay += step.valueAsNumber;
   }
+  e.currentTarget.reset();
 }
 
 function createPromise(position, delay) {
