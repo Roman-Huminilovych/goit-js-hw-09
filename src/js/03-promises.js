@@ -20,10 +20,11 @@ function submitPromises(e) {
       })
       .catch(({ position, delay }) => {
         Notify.failure(`❌ Rejected promise ${i} in ${delay}ms`);
-      });
+      })
+      .finally(() => form.reset());
     delay += step.valueAsNumber;
   }
-  e.currentTarget.reset();
+  // e.currentTarget.reset();
 }
 
 function createPromise(position, delay) {
